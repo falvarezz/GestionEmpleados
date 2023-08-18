@@ -96,15 +96,9 @@ SELECT * FROM Empleados
 ```
 </br>
 
-<p> Búsqueda de Empleados por Nombre: La página de gestión permite buscar empleados por su nombre ingresando el nombre y presionando el botón "Buscar":</p>
-``` asp
-<div class="col-md-4 d-flex align-items-end justify-content-end text-right ">
-                <asp:TextBox runat="server" ID="TxtSearch" CssClass="form-control" placeholder="Buscar por nombre"></asp:TextBox>
-                <asp:Button runat="server" ID="BtnSearch" CssClass="btn btn-primary" Text="Buscar" OnClick="BtnSearch_Click" />
-            </div>
-```
-<p> Al ingresar un nombre, se muestra en la lista de empleados cuyos nombres coincidan en la base de datos:</p>
-``` csharp
+<p> Búsqueda de Empleados por Nombre: La página de gestión permite buscar empleados por su nombre ingresando el nombre y presionando el botón "Buscar". Al ingresar un nombre, se muestra en la lista de empleados cuyos nombres coincidan en la base de datos:</p>
+
+```csharp
 protected void BtnSearch_Click(object sender, EventArgs e)
         {
             string nombreBuscado = TxtSearch.Text.Trim();
@@ -119,15 +113,19 @@ protected void BtnSearch_Click(object sender, EventArgs e)
             TbEmpleados.DataBind();
         }
 ```
+
 </br>
+
 <p> Validaciones de Datos: Se han implementado validaciones para asegurar que los campos requeridos se ingresen correctamente y que el correo electrónico tenga un formato válido.</p>
+
 </br>
+
 <p> Framework de CSS y JavaScript: Se ha utilizado el framework Bootstrap en la pagina maestra **Site.Master** para dar estilo a la aplicación web, mejorando su presentación y facilitando la interacción del usuario con las funcionalidades implementadas:</p
+
 ``` html
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 ```
-
 
 

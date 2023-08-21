@@ -72,11 +72,18 @@ namespace GestionEmpleados.Pages
 
         protected void BtnDelete_Click(object sender, EventArgs e)
         {
-            string id;
-            Button BtnConsultar = (Button)sender;
-            GridViewRow selectedrow = (GridViewRow)BtnConsultar.NamingContainer;
-            id = selectedrow.Cells[1].Text;
-            Response.Redirect("~/Pages/Empleados.aspx?id=" + id + "&op=D");
+            Button BtnDelete = (Button)sender;
+            GridViewRow row = (GridViewRow)BtnDelete.NamingContainer;
+            int id = Convert.ToInt32(row.Cells[1].Text);
+
+            SqlCommand cmd = new SqlCommand("Borrar", conec);
+            conec.Open();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+            cmd.ExecuteNonQuery();
+            conec.Close();
+
+            cargarTabla(); // Vuelve a cargar la tabla después de la eliminación
         }
     }
 }

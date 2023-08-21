@@ -34,7 +34,6 @@
         </div>
         <asp:Button runat="server" CssClass="btn btn-primary btn-info" ID="BtnCreate" Text="Crear" Visible="false" Onclick="BtnCreate_Click" CausesValidation="true" />
         <asp:Button runat="server" CssClass="btn btn-primary btn-warning" ID="BtnUpdate" Text="Editar" Visible="false" Onclick="BtnUpdate_Click" CausesValidation="true"/>
-        <asp:Button runat="server" CssClass="btn btn-primary btn-danger" ID="BtnDelete" Text="Borrar" Visible="false" Onclick="BtnDelete_Click"/>
         <asp:Button runat="server" CssClass="btn btn-primary btn-dark" ID="BtnVolver" Text="Volver" Visible="true" Onclick="BtnVolver_Click"/>
         </div>    
     </form>

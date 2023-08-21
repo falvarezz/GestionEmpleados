@@ -41,10 +41,6 @@ namespace GestionEmpleados.Pages
                             this.lbtitulo.Text = "Modificar Empleado";
                             this.BtnUpdate.Visible = true;
                             break;
-                        case "D":
-                            this.lbtitulo.Text = "Eliminar Empleado";
-                            this.BtnDelete.Visible = true;
-                            break;
                     }
                 }
             }
@@ -92,17 +88,6 @@ namespace GestionEmpleados.Pages
             cmd.Parameters.Add("@Apellido", SqlDbType.VarChar).Value = TbApellido.Text; ;
             cmd.Parameters.Add("@Correo", SqlDbType.VarChar).Value = TbEmail.Text; ;
             cmd.Parameters.Add("@Salario", SqlDbType.Int).Value = TbSalario.Text; ;
-            cmd.ExecuteNonQuery();
-            conec.Close();
-            Response.Redirect("Index.aspx");
-        }
-
-        protected void BtnDelete_Click(object sender, EventArgs e)
-        {
-            SqlCommand cmd = new SqlCommand("Borrar", conec);
-            conec.Open();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = eID;
             cmd.ExecuteNonQuery();
             conec.Close();
             Response.Redirect("Index.aspx");
